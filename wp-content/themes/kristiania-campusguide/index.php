@@ -8,15 +8,6 @@ get_header(); ?>
             </div>
         <?php endif; ?>
 
-
-
-            <div class="container"> 
-                <div class="row"> 
-                </div>                 
-            </div>
-
-
-
 <style>
         .no-padding { padding: 0; }
 
@@ -61,13 +52,13 @@ get_header(); ?>
                 <div class="floating-boxes-container"> 
                     <div class="row justify-content-center"> 
                         <div class="col-5 m-3 col-md-3 floating-box box-bg-1">
-                            <?php _e( '1', 'kristianiacampusguide' ); ?>
+                            1
                         </div>                         
                         <div class="col-5 m-3 col-md-3 floating-box box-bg-2">
-                            <?php _e( '2', 'kristianiacampusguide' ); ?>
+                            2
                         </div>                         
                         <div class="col-5 m-3 col-md-3 floating-box box-bg-3">
-                            <?php _e( '3', 'kristianiacampusguide' ); ?>
+                            3
                         </div>                         
                     </div>                     
                 </div>                 

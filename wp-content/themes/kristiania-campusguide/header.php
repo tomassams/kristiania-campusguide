@@ -31,9 +31,11 @@
             <!-- navigation menu & logo -->             
             <nav class="navbar navbar-light navbar-expand-md fixed-top" id="main-nav"> 
                 <div class="container">
-                    <a class="navbar-brand" href="<?php echo esc_url( get_home_url() ); ?>"><?php _e( 'Brand', 'kristianiacampusguide' ); ?></a>
+                    <a class="navbar-brand" href="<?php echo esc_url( get_home_url() ); ?>">
+                        <img src="<?php echo get_template_directory_uri() . '/assets/hk_logo_black.svg' ?>" style="height:auto;" class="mr-3 ml-3 d-block"> Campusguide
+                    </a>
                     <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"> 
-                        <span class="sr-only"><?php _e( 'Toggle navigation', 'kristianiacampusguide' ); ?></span>
+                        <span class="sr-only">Toggle navigation</span>
                         <span class="navbar-toggler-icon"></span>
                     </button>                     
                     <div class="collapse navbar-collapse" id="navcol-1"> 

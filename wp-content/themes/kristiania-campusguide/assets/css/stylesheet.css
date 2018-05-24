@@ -138,9 +138,25 @@ h1, h2, h3, h4, h5, h6 {
   		height:60px;
 	}
 
+	.campus-thumb-container {
+		padding-left: 3rem!important;
+		padding-right: 0rem!important;
+	}
+
+
+
 @media (min-width: 768px) {
 
 	.w-md-50 {
 		width: 50%!important;
 	}
+
+.campus-thumb-container {
+		padding-left: 3rem!important;
+		padding-right: 3rem!important;
+	}
  }
+
+#main-nav {
+	font-family: 'Graphik Bold';
+}
