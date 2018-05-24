@@ -9,59 +9,7 @@ get_header(); ?>
         <?php endif; ?>
 
 
-            <div class="container"> 
-                <!-- campus boxes -->                 
-                <div class="campus-boxes-container"> 
-                    <div class="row justify-content-center"> 
-                        <div class="col-12 col-md-3 campus-box box-bg-1"> 
-                            <div class="container"> 
-                                <div class="row justify-content-center"> 
-                                    <div class="col-4 col-md-8 image-frame frame-1"> </div>                                     
-                                    <div class="col-8 col-md-7 campus-text text-1"> 
-                                        <h3>Vulkan</h3> 
-                                        <p class="d-none d-md-block">This is a simple hero unit. This is a simple hero unit. This is a simple hero unit.This is a simple hero unit. This is</p> 
-                                    </div>                                     
-                                </div>                                 
-                            </div>                             
-                        </div>                         
-                        <div class="col-12 col-md-3 campus-box box-bg-2"> 
-                            <div class="container"> 
-                                <div class="row justify-content-center"> 
-                                    <div class="col-4 col-md-8 image-frame frame-2"></div>                                     
-                                    <div class="col-8 col-md-8 campus-text text-2"> 
-                                        <h3>Fjerdingen</h3> 
-                                        <p class="d-none d-md-block">This is a simple hero unit</p> 
-                                    </div>                                     
-                                </div>                                 
-                            </div>                             
-                        </div>                         
-                        <div class="col-12 col-md-3 campus-box box-bg-3"> 
-                            <div class="container"> 
-                                <div class="row justify-content-center"> 
-                                    <div class="col-4 col-md-8 image-frame frame-3"></div>                                     
-                                    <div class="col-8 col-md-9 campus-text text-3"> 
-                                        <h3>Kvadraturen</h3> 
-                                        <p class="d-none d-md-block">This is a simple hero unit</p> 
-                                    </div>                                     
-                                </div>                                 
-                            </div>                             
-                        </div>                         
-                        <div class="col-12 col-md-3 campus-box box-bg-4"> 
-                            <div class="container"> 
-                                <div class="row justify-content-center"> 
-                                    <div class="col-4 col-md-8 image-frame frame-4"></div>                                     
-                                    <div class="col-8 col-md-10 campus-text text-4"> 
-                                        <h3>Brenneriveien</h3> 
-                                        <p class="d-none d-md-block">This is a simple hero unit</p> 
-                                    </div>                                     
-                                </div>                                 
-                            </div>                             
-                        </div>                         
-                    </div>                     
-                </div>                 
 
-                <!-- ./ campus boxes -->                 
-            </div>             
             <div class="container"> 
                 <div class="row"> 
                 </div>                 
