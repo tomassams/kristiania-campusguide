@@ -7,6 +7,7 @@
      url('../../assets/fonts/graphik/Graphik-Medium.woff') format('woff'),
      url('../../assets/fonts/graphik/Graphik-Medium.ttf') format('truetype');
   font-style:   normal;
+  font-weight:400;
   font-stretch: normal;
 }
 
@@ -17,15 +18,37 @@
      url('../../assets/fonts/graphik/Graphik-Light.woff') format('woff'),
      url('../../assets/fonts/graphik/Graphik-Light.ttf') format('truetype');
   font-style:   normal;
+  font-weight:400;
   font-stretch: normal;
 }
 
-
+@font-face {
+  font-family: 'Graphik Bold';
+  src: url('../../assets/fonts/graphik/Graphik-Bold.eot');
+  src: url('../../assets/fonts/graphik/Graphik-Bold.eot?#iefix') format('embedded-opentype'),
+     url('../../assets/fonts/graphik/Graphik-Bold.woff') format('woff'),
+     url('../../assets/fonts/graphik/Graphik-Bold.ttf') format('truetype');
+  font-style:   normal;
+  font-weight:400;
+  font-stretch: normal;
+}
 
 html, body {
-		color: black;
-		font-family: 'Graphik Web';
-	}
+	color: black;
+	font-family: 'Graphik Web', sans-serif!important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Graphik Bold', sans-serif!important;
+}
+
+.campus-boxes-container a:hover > div {
+	background-color:black;
+}
+
+.nounderline{text-decoration: none!important;}
+
+
 	.jumbotron {
 		background-image: url('../../assets/img/jumbotron.jpg');
 		background-size: cover;
