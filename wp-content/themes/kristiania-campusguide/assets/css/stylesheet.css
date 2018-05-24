@@ -1,5 +1,30 @@
+
+
+@font-face {
+  font-family: 'Graphik Web';
+  src: url('../../assets/fonts/graphik/Graphik-Medium.eot');
+  src: url('../../assets/fonts/graphik/Graphik-Medium.eot?#iefix') format('embedded-opentype'),
+     url('../../assets/fonts/graphik/Graphik-Medium.woff') format('woff'),
+     url('../../assets/fonts/graphik/Graphik-Medium.ttf') format('truetype');
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'Graphik Light';
+  src: url('../../assets/fonts/graphik/Graphik-Light.eot');
+  src: url('../../assets/fonts/graphik/Graphik-Light.eot?#iefix') format('embedded-opentype'),
+     url('../../assets/fonts/graphik/Graphik-Light.woff') format('woff'),
+     url('../../assets/fonts/graphik/Graphik-Light.ttf') format('truetype');
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+
+
 html, body {
 		color: black;
+		font-family: 'Graphik Web';
 	}
 	.jumbotron {
 		background-image: url('../../assets/img/jumbotron.jpg');
