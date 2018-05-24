@@ -61,6 +61,15 @@ function kristianiacampusguide_widgets_init() {
     /*
      * Register widget areas.
      */
+
+    register_sidebar( array(
+        'name' => __( 'Campus Navigation Area', 'kristianiacampusguide' ),
+        'id' => 'campus_navigation',
+        'before_widget' => '<li id="%1$s" class="widget %2$s">',
+        'after_widget' => '</li>',
+        'before_title' => '<h3 class="widgettitle">',
+        'after_title' => '</h3>'
+    ) );
     
 }
 add_action( 'widgets_init', 'kristianiacampusguide_widgets_init' );
@@ -72,6 +81,42 @@ if ( ! function_exists( 'kristianiacampusguide_customize_register' ) ) :
 
 function kristianiacampusguide_customize_register( $wp_customize ) {
     // Do stuff with $wp_customize, the WP_Customize_Manager object.
+    $wp_customize->add_section( 'frontpage_settings', array(
+        'title' => __( 'Front page settings', 'kristianiacampusguide' )
+    ));
+
+    $wp_customize->add_setting( 'frontpage_textfield_heading', array(
+        'type' => 'theme_mod',
+        'default' => __( 'Lorem ipsum', 'kristianiacampusguide' )
+    ));
+
+    $wp_customize->add_control( 'frontpage_textfield_heading', array(
+        'label' => __( 'Frontpage Textfield Heading', 'kristianiacampusguide' ),
+        'type' => 'text',
+        'section' => 'frontpage_settings'
+    ));
+
+    $wp_customize->add_setting( 'frontpage_textfield', array(
+        'type' => 'theme_mod',
+        'default' => __( 'Lorem ipsum', 'kristianiacampusguide' )
+    ));
+
+    $wp_customize->add_control( 'frontpage_textfield', array(
+        'label' => __( 'Frontpage Textfield', 'kristianiacampusguide' ),
+        'type' => 'textarea',
+        'section' => 'frontpage_settings'
+    ));
+
+    $wp_customize->add_setting( 'frontpage_textfield_image', array(
+        'type' => 'theme_mod'
+    ));
+
+    $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'frontpage_textfield_image', array(
+        'label' => __( 'Frontpage Textfield Image', 'kristianiacampusguide' ),
+        'type' => 'media',
+        'mime_type' => 'image',
+        'section' => 'frontpage_settings'
+    ) ) );
 
 
 }
