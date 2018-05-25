@@ -141,7 +141,7 @@ if ( ! function_exists( 'kristianiacampusguide_enqueue_scripts' ) ) :
 
     wp_deregister_style( 'ionicons' );
     wp_enqueue_style( 'ionicons', get_template_directory_uri() . '/assets/fonts/ionicons.min.css', false, null, 'all');
-    
+
     wp_deregister_style( 'stylesheet' );
     wp_enqueue_style( 'stylesheet', get_template_directory_uri() . '/assets/css/stylesheet.css', false, null, 'all');
 
@@ -149,6 +149,11 @@ if ( ! function_exists( 'kristianiacampusguide_enqueue_scripts' ) ) :
     add_action( 'wp_enqueue_scripts', 'kristianiacampusguide_enqueue_scripts' );
 endif;
 
+function cc_mime_types($mimes) {
+ $mimes['svg'] = 'image/svg+xml';
+ return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types');
 
 
 require_once "inc/bootstrap/wp_bootstrap4_navwalker.php";
