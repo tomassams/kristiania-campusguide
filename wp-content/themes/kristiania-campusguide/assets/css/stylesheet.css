@@ -51,6 +51,7 @@ h1, h2, h3, h4, h5, h6 {
 
 	.jumbotron {
 		background-image: url('../../assets/img/jumbotron.jpg');
+		background-attachment:fixed;
 		background-size: cover;
 		height: 500px;
 		background-position:center;
@@ -231,3 +232,16 @@ body {
 			font-size: 15px;
 		}
 	}
+
+.slide-container {
+
+}
+.slide {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.slick-list,
+.slick-track {
+    height: 100%;
+}

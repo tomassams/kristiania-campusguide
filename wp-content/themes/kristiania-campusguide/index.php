@@ -1,5 +1,5 @@
 <?php
-get_header(); ?>
+get_header('index'); ?>
 
 <?php if ( is_active_sidebar( 'campus_navigation' ) ) : ?>
             <div>

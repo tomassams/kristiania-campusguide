@@ -70,6 +70,17 @@ function kristianiacampusguide_widgets_init() {
         'before_title' => '<h3 class="widgettitle">',
         'after_title' => '</h3>'
     ) );
+
+    register_sidebar( array(
+        'name' => __( 'Frontpage Slider Area', 'kristianiacampusguide' ),
+        'id' => 'frontpage_slider_area',
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '<h3 class="widgettitle">',
+        'after_title' => '</h3>'
+    ) );
+
+    
     
 }
 add_action( 'widgets_init', 'kristianiacampusguide_widgets_init' );
