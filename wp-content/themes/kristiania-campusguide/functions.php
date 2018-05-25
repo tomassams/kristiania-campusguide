@@ -138,8 +138,9 @@ endif;// kristianiacampusguide_customize_register
 if ( ! function_exists( 'kristianiacampusguide_enqueue_scripts' ) ) :
     function kristianiacampusguide_enqueue_scripts() {
 
-    wp_deregister_script( 'jqueryslim' );
-    wp_enqueue_script( 'jqueryslim', 'https://code.jquery.com/jquery-3.3.1.slim.min.js', false, null, true);
+
+    wp_deregister_script( 'jquery' );
+    wp_enqueue_script ('jquery' , 'https://code.jquery.com/jquery-3.3.1.min.js', false, null, true);
 
     wp_deregister_script( 'popper' );
     wp_enqueue_script( 'popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js', false, null, true);

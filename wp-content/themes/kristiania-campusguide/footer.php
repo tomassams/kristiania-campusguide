@@ -19,8 +19,14 @@ $(document).ready(function(){
   arrows: false,
   infinite: true,
   fade: true,
+  speed: 500,
 });
 });
+
+
+  $('#end option').filter(function() { 
+    return ($(this).text() == campusName);
+}).prop('selected', true);
 </script>
     </body>     
 </html>
