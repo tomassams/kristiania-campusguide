@@ -1,35 +1,13 @@
 <?php
 get_header(); ?>
 
-
 <?php if ( is_active_sidebar( 'campus_navigation' ) ) : ?>
             <div>
                 <?php dynamic_sidebar( 'campus_navigation' ); ?>
             </div>
         <?php endif; ?>
 
-<style>
-        .no-padding { padding: 0; }
-
-        .split-box {
-            height: 511px;
-        }
-        .place-center {
-            position:absolute;
-            top: 50%;
-            left:50%;
-            transform: translate(-50%,-50%);
-        }
-        .image-box {
-            height: 511px;
-            width:50%;
-            background-position:center; 
-            background-repeat:no-repeat; 
-            background-size: cover;
-        }
-    </style>
-
-    <!-- Finn frem -->
+    <!-- Full width box text/image split -->
     <div class="container-fluid box-bg-2 no-padding">
         <div class="row no-gutters">
             <div class="col-12 col-lg-6 order-7 order-lg-7 position-relative split-box">
@@ -44,11 +22,8 @@ get_header(); ?>
         </div>
     </div>
 
-
-
-
-            <div class="container"> 
-                <!-- 3 floating boxes -->                 
+            <!-- floating boxes -->   
+            <div class="container">               
                 <div class="floating-boxes-container"> 
                     <div class="row justify-content-center"> 
                         <div class="col-5 m-3 col-md-3 floating-box box-bg-1">
@@ -62,8 +37,7 @@ get_header(); ?>
                         </div>                         
                     </div>                     
                 </div>                 
-            </div>             
-
-            <!-- ./ 3 floating boxes -->                         
+            </div>
+            <!-- ./ floating boxes -->                         
 
 <?php get_footer(); ?>

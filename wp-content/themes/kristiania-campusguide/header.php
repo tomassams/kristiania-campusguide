@@ -6,25 +6,6 @@
         <!-- styles -->                           
         <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
         <?php wp_head(); ?>
-        <style type="text/css">
-        body {
-            margin-top: -28px;
-            padding-bottom: 28px;
-        }
-        body.admin-bar #wphead {
-            padding-top: 0;
-        }
-        body.admin-bar #footer {
-            padding-bottom: 28px;
-        }
-        #wpadminbar {
-            top: auto !important;
-            bottom: 0;
-        }
-        #wpadminbar .quicklinks .menupop ul {
-            bottom: 28px;
-        }
-    </style>
     </head>     
     <body class="<?php echo implode(' ', get_body_class()); ?>"> 
         <header> 
@@ -51,8 +32,7 @@
                 </div>                 
             </nav>             
             <!-- jumbotron / slider -->             
-            <div class="jumbotron"> 
-</div>             
+            <div class="jumbotron jumbo-image"> </div>             
 
             <!-- ./ jumbotron / slider -->             
         </header>         

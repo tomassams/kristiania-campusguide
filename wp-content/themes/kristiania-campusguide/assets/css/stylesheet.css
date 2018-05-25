@@ -160,3 +160,61 @@ h1, h2, h3, h4, h5, h6 {
 #main-nav {
 	font-family: 'Graphik Bold';
 }
+
+/* hide the wp admin bar while we are developing because its in the way */
+body {
+            margin-top: -28px;
+            padding-bottom: 28px;
+        }
+        body.admin-bar #wphead {
+            padding-top: 0;
+        }
+        body.admin-bar #footer {
+            padding-bottom: 28px;
+        }
+        #wpadminbar {
+            top: auto !important;
+            bottom: 0;
+        }
+        #wpadminbar .quicklinks .menupop ul {
+            bottom: 28px;
+        }
+/* //// */
+
+
+        .no-padding { padding: 0; }
+
+        .split-box {
+            height: 511px;
+        }
+        .place-center {
+            position:absolute;
+            top: 50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+        }
+        .image-box {
+            height: 511px;
+            width:50%;
+            background-position:center; 
+            background-repeat:no-repeat; 
+            background-size: cover;
+        }
+
+        
+		.quick-nav {
+
+		}
+		.quick-nav ul {
+			padding:0;
+			margin:0;
+		}
+		.quick-nav li {
+			list-style: none;
+			padding:0;
+			margin:0;
+		}
+		.quick-nav button {
+			width: 100%;
+			text-align:left;
+		}
