@@ -2,7 +2,11 @@
         </main>         
         <footer class="footer"> 
             <div class="container"> 
-                <p><?php _e( 'Takk for besøket', 'kristianiacampusguide' ); ?>  
+                <?php if ( is_active_sidebar( 'footer_area' ) ) : ?>
+                  <div>
+                      <?php dynamic_sidebar( 'footer_area' ); ?>
+                  </div>
+              <?php endif; ?> 
             </div>             
         </footer>         
         <!-- scripts -->                                    

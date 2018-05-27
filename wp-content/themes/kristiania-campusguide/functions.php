@@ -80,6 +80,15 @@ function kristianiacampusguide_widgets_init() {
         'after_title' => '</h3>'
     ) );
 
+    register_sidebar( array(
+        'name' => __( 'Footer Area', 'kristianiacampusguide' ),
+        'id' => 'footer_area',
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '<h3 class="widgettitle">',
+        'after_title' => '</h3>'
+    ) );
+
     
     
 }
