@@ -244,3 +244,37 @@ body {
 .slick-track {
     height: 100%;
 }
+
+
+	#maps {
+		height: 100%;
+	}
+	#maps-floating-panel {
+		position: absolute;
+		bottom: 10px;
+		z-index: 5;
+		padding: 5px;
+		text-align: center;
+		font-family: 'Graphik Web','sans-serif';
+	}
+
+	#maps-floating-panel div {
+		margin: 5px auto;
+		padding: 5px;
+		background-color: white;
+	}
+	.wrap {
+	}
+	.wrap img {
+		position:absolute;
+	}
+	.floor { 
+		width: 100%;
+		opacity: 1;
+	}
+	.floor:hover { 
+		opacity: 1;
+	}
+	.floor-active > a > .floor:not(.selected) {
+		opacity: 0.1!important;
+	}
