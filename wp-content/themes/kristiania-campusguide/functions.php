@@ -187,6 +187,12 @@ if ( ! function_exists( 'kristianiacampusguide_enqueue_scripts' ) ) :
     wp_deregister_script( 'mainjs' );
     wp_enqueue_script( 'mainjs', get_template_directory_uri() . '/assets/js/main.js', false, null, true);
 
+    wp_deregister_script( 'jquery-easing' );
+    wp_enqueue_script( 'jquery-easing', get_template_directory_uri() . '/assets/js/jquery-easing.min.js', false, null, true);
+
+    wp_deregister_script( 'scroll-nav' );
+    wp_enqueue_script( 'scroll-nav', get_template_directory_uri() . '/assets/js/scrolling-nav.js', false, null, true);
+
     }
     add_action( 'wp_enqueue_scripts', 'kristianiacampusguide_enqueue_scripts' );
 endif;
