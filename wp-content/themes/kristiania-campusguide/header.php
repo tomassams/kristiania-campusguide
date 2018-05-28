@@ -6,6 +6,7 @@
         <!-- styles -->                           
         <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
         <?php wp_head(); ?>
+        <script defer src="http://127.0.0.1:8080/kristiania-campusguide/wp-content/themes/kristiania-campusguide/assets/js/timeedit.js" type="text/javascript"></script>
     </head>     
     <body class="<?php echo implode(' ', get_body_class()); ?>"> 
         <header> 
