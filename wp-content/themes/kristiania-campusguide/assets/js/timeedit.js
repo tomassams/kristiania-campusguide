@@ -27,6 +27,9 @@ function process(roomObjectID) {
         let nextWeekFormatted = futureArray[2] + futureArray[0] + futureArray[1];
         let thisWeekFormatted = dateArray[0] + dateArray[1] + dateArray[2];
         requestInfo(dateArray[2], thisWeekFormatted, nextWeekFormatted, roomObjectID);
+
+        // open the modal window
+        $('.floorplan-modal').modal();
     }
 }
 

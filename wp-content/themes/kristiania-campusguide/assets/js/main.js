@@ -33,3 +33,18 @@ $('#floor-buttons > button').hover(function() {
         $('#' + hoveredFloor).toggleClass('selected').siblings().toggleClass('selected');
 
     });
+
+
+
+
+  $('.embed-responsive-item').click(function() {
+
+    console.log('floor clicked');
+
+    var floorContainer = document.getElementById('floor-container');
+
+    $('#floor-container').fadeOut('slow');
+
+    $('#floorplan-container').fadeIn('slow');
+
+  });
