@@ -215,16 +215,16 @@ function centerOnCampus(geocoder, address, map) {
 
 
 function createIcon(type, rating) {
-    var filterTypes = ['cafe', 'liquor_store', 'gym', 'night_club', 'restaurant', 'library', 'park', 'store'];
+    var filterTypes = allowedTypes;
     for (var j = 0; j < filterTypes.length; j++) {
         if (type === filterTypes[j]) {
             var iconBase = 'http://tek.westerdals.no/~samtom17/pgr101_icons/'
             var image = {
                 url: iconBase + type + '.png',
-                size: new google.maps.Size(72, 72),
+                size: new google.maps.Size(82, 82),
                 origin: new google.maps.Point(0, 0),
                 anchor: new google.maps.Point(17, 34),
-                scaledSize: new google.maps.Size(25, 25)
+                scaledSize: new google.maps.Size(35, 35)
             }
             return image;
         }
@@ -288,9 +288,7 @@ function createMarker(place, type) {
     });
 };
 
-function setTypeArr() {
-
-    var allowedTypes = ['cafe', // kafeer
+var allowedTypes = ['cafe', // kafeer
         'restaurant', // restauranter
         'convenience_store', // kiosker
         'gas_station', // bensinstasjoner
@@ -304,6 +302,9 @@ function setTypeArr() {
         'art_gallery', // kunstgallerier
         'museum'
     ]; // museer
+
+
+function setTypeArr() {
 
     var filterTypes = [];
 
