@@ -7,7 +7,7 @@
         <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
         <?php wp_head(); ?>
         <script defer src="http://127.0.0.1:8080/kristiania-campusguide/wp-content/themes/kristiania-campusguide/assets/js/timeedit.js" type="text/javascript"></script>
-        <link rel="stylesheet" type="text/css" href="calendar.css"
+        <link rel="stylesheet" type="text/css" href="calendar.css">
     </head>     
     <body id="body-top" class="<?php echo implode(' ', get_body_class()); ?>"> 
         <!-- hidden modal containing floorplan info -->
@@ -24,10 +24,10 @@
 
                 <form>
                     <p style="margin:auto; text-align:center; font-family:'Graphik Bold';">Velg dato</p>
-                    <input type="date" class="form-control"id="date-input" min="2017-01-01" max="2025-01-01" style="margin:auto; width:200px;">
+                    <input type="date" class="form-control"id="date-input" min="2017-01-01" max="2025-01-01" style="margin:auto; width:200px; padding-left: 50px;">
                 </form>
                 
-                    <div id="content">
+                    <div id="content" class="table-responsive">
                         <table id="content-table" class="table table-striped">
 
                         </table>   
