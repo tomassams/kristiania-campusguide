@@ -89,6 +89,15 @@ function kristianiacampusguide_widgets_init() {
         'after_title' => '</h3>'
     ) );
 
+    register_sidebar( array(
+        'name' => __( 'Shortcut Links Area', 'kristianiacampusguide' ),
+        'id' => 'shortcut_links_area',
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '<h3 class="widgettitle">',
+        'after_title' => '</h3>'
+    ) );
+
     
     
 }
@@ -160,6 +169,12 @@ if ( ! function_exists( 'kristianiacampusguide_enqueue_scripts' ) ) :
     wp_deregister_style( 'bootstrap' );
     wp_enqueue_style( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css', false, null, 'all');
 
+    wp_deregister_style( 'slick' );
+    wp_enqueue_style( 'slick', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css', false, null, 'all');
+
+    wp_deregister_script( 'slick' );
+    wp_enqueue_script( 'slick', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', false, null, true);
+
     wp_deregister_style( 'ionicons' );
     wp_enqueue_style( 'ionicons', get_template_directory_uri() . '/assets/fonts/ionicons.min.css', false, null, 'all');
 
@@ -168,6 +183,12 @@ if ( ! function_exists( 'kristianiacampusguide_enqueue_scripts' ) ) :
 
     wp_deregister_style( 'stylesheet' );
     wp_enqueue_style( 'stylesheet', get_template_directory_uri() . '/assets/css/stylesheet.css', false, null, 'all');
+
+    wp_deregister_script( 'maps' );
+    wp_enqueue_script( 'maps', get_template_directory_uri() . '/assets/js/maps.js', false, null, true);
+
+    wp_deregister_script( 'mainjs' );
+    wp_enqueue_script( 'mainjs', get_template_directory_uri() . '/assets/js/main.js', false, null, true);
 
     }
     add_action( 'wp_enqueue_scripts', 'kristianiacampusguide_enqueue_scripts' );
