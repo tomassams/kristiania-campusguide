@@ -103,13 +103,13 @@ function generateForm(timeEditObject) {
             table.rows[0].insertCell(j);
         }
     }    
+
+    generateHeader();
 }
 
 function fillForm(timeEditObject) {
     let rowSize = timeEditObject.reservations.length;
     let table = document.getElementById('content-table');
-    
-
 
     for (let i = 0; i < rowSize; ++i) { 
         table.rows[i+1].cells[0].innerHTML = timeEditObject.reservations[i].startdate;
