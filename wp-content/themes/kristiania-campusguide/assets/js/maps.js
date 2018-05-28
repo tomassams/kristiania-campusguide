@@ -1,19 +1,3 @@
-$('#floor-container > a > img').hover(function() {
-
-    $('#floor-container').toggleClass('floor-active');
-
-    $(this).toggleClass('selected').siblings().toggleClass('selected');
-})
-
-$('#floor-buttons > button').hover(function() {
-
-        $('#floor-container').toggleClass('floor-active');
-
-        var hoveredFloor = $(this).val();
-
-        $('#' + hoveredFloor).toggleClass('selected').siblings().toggleClass('selected');
-
-    });
 
 var map;
 
@@ -29,7 +13,7 @@ var placesInfoWindowArray = [];
 function initMap() {
 
     var filterType = 'cafe';
-    var pyrmont = {
+    var center = {
         lat: 59.9161644,
         lng: 10.7596752
     };
@@ -56,7 +40,7 @@ function initMap() {
         });
         var service = new google.maps.places.PlacesService(map);
         service.nearbySearch({
-            location: pyrmont,
+            location: center,
             radius: 1000,
             type: filterTypes[j]
         }, createCallback(filterType));
@@ -72,8 +56,6 @@ function initMap() {
             }
         }
     }
-
-
 
     // directions service
     var directionsService = new google.maps.DirectionsService;
@@ -211,8 +193,6 @@ function centerOnCampus(geocoder, address, map) {
 
     });
 }
-
-
 
 function createIcon(type, rating) {
     var filterTypes = allowedTypes;

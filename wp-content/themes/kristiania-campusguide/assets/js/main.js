@@ -16,3 +16,20 @@ $(document).ready(function(){
   $('#end option').filter(function() { 
     return ($(this).text() == campusName);
 }).prop('selected', true);
+
+  $('#floor-container > a > img').hover(function() {
+
+    $('#floor-container').toggleClass('floor-active');
+
+    $(this).toggleClass('selected').siblings().toggleClass('selected');
+})
+
+$('#floor-buttons > button').hover(function() {
+
+        $('#floor-container').toggleClass('floor-active');
+
+        var hoveredFloor = $(this).val();
+
+        $('#' + hoveredFloor).toggleClass('selected').siblings().toggleClass('selected');
+
+    });
