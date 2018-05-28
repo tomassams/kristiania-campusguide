@@ -22,22 +22,10 @@ get_header('index'); ?>
         </div>
     </div>
 
-            <!-- floating boxes -->   
-            <div class="container">               
-                <div class="floating-boxes-container"> 
-                    <div class="row justify-content-center"> 
-                        <div class="col-5 m-3 col-md-3 floating-box box-bg-1">
-                            1
-                        </div>                         
-                        <div class="col-5 m-3 col-md-3 floating-box box-bg-2">
-                            2
-                        </div>                         
-                        <div class="col-5 m-3 col-md-3 floating-box box-bg-3">
-                            3
-                        </div>                         
-                    </div>                     
-                </div>                 
+<?php if ( is_active_sidebar( 'shortcut_links_area' ) ) : ?>
+            <div class="container mt-5 mb-5">
+                <?php dynamic_sidebar( 'shortcut_links_area' ); ?>
             </div>
-            <!-- ./ floating boxes -->                         
+        <?php endif; ?>
 
 <?php get_footer(); ?>

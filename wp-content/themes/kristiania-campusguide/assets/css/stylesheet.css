@@ -1,4 +1,6 @@
-
+/*
+**	GRAPHIK FONTS
+*/
 
 @font-face {
   font-family: 'Graphik Web';
@@ -33,6 +35,9 @@
   font-stretch: normal;
 }
 
+/*
+**	GENERAL STYLING
+*/
 html, body {
 	color: black;
 	font-family: 'Graphik Web', sans-serif!important;
@@ -42,199 +47,206 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: 'Graphik Bold', sans-serif!important;
 }
 
+/* Hover for the campus navigation */
+.campus-boxes-container a > div {
+	transition: 1s ease;
+}
+
+/* Hover for the campus navigation */
 .campus-boxes-container a:hover > div {
 	background-color:black;
 }
 
-.nounderline{text-decoration: none!important;}
+/* No-underline helper class */
+.nounderline{ 
+	text-decoration: none!important; 
+}
 
+/* Contains the jumbotron or slider */
+.jumbotron {
+	background-image: url('../../assets/img/jumbotron.jpg');
+	background-attachment:fixed;
+	background-size: cover;
+	height: 500px;
+	background-position:center;
+}
 
-	.jumbotron {
-		background-image: url('../../assets/img/jumbotron.jpg');
-		background-attachment:fixed;
-		background-size: cover;
-		height: 500px;
-		background-position:center;
+/* Place the campus navigation on top of the jumbotron */
+.campus-boxes-container {
+	margin-top: -100px;
+	padding-bottom: 50px;
+}
 
-	}
-	.campus-boxes-container {
-		margin-top: -100px;
-		padding-bottom: 50px;
-	}
-	.campus-box {
-		padding: 20px;
-	
-	}
-	.box-bg-1 { background-color: #502C78; }
-	.box-bg-2 { background-color: #C9243F; }
-	.box-bg-3 { background-color: #8D285C; }
-	.box-bg-4 { background-color: #68789B ; }
+/* The campus navigation boxes */
+.campus-box {
+	padding: 20px;
 
-	.split-box-container {
-		padding-bottom: 50px;
-	}
+}
 
-	.floating-boxes-container {
-		padding-bottom: 50px;
-	}
+/* Some background color helpers */
+.box-bg-1 { background-color: #502C78; }
+.box-bg-2 { background-color: #C9243F; }
+.box-bg-3 { background-color: #8D285C; }
+.box-bg-4 { background-color: #68789B ; }
 
-	.floating-box {
-		padding: 20px;
-		height: 150px;
-	}
+/* The top nav bar */
+#main-nav {
+	background-color: white;
+	opacity: 0.9;
+	font-family: 'Graphik Bold';
+}
 
-	#main-nav {
-		background-color: white;
-		opacity: 0.9;
-	}
+#main-nav a {
+	transition: 1s ease;
+}
+#main-nav a:hover {
+}
+#main-nav a.active {
+	text-decoration:underline;
+}
+h1 a {
+	color: black;
+	transition: 1s ease;
+}
+h1 a:hover {
+	color: #C9243F!important;
+}
 
-	.image-frame{
-		height: 120px;
-		border-style: solid;
-		border-width: 2px;
-		border-color: black;
-	}
+/* The image-frame (border) for the campus navigation thumnails */
+.image-frame{
+	height: 120px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: black;
+}
 
-	.frame-1{
-		background-image: url('../../assets/img/vulkan.jpg');
-		background-size: cover;
-	}
+/* Footer section */
+.footer{
+	background-color: #68789B;
+	text-align:center;
 
-	.frame-2{
-		background-image: url('../../assets/img/jumbotron.jpg');
-		background-size: cover;
-	}
+	position: absolute;
+		width: 100%;
+}
+.social-container ul,
+.social-container li {
+	list-style: none;
+	display:inline-block;
+}
+.social {
+	width: 40px;
+	height: 40px;
+	display:inline-block;
+	background-size:cover;
+	background-position:center;
+	background-repeat:no-repeat;
+}
+.social-twitter {
+	background-image: url('https://kristiania.no/wp-content/themes/hk/dist/images/social/HK Ikon-Twitter-stor.svg');
+}
+.social-facebook {
+	background-image: url('https://kristiania.no/wp-content/themes/hk/dist/images/social/HK Ikon-FB-stor.svg');
+}
+.social-instagram {
+	background-image: url('https://kristiania.no/wp-content/themes/hk/dist/images/social/HK Ikon-IG-stor.svg');
+}
+.social-linkedin {
+	background-image: url('https://kristiania.no/wp-content/themes/hk/dist/images/social/HK Ikon-Linkedin-stor.svg');
+}
+.social-snapchat {
+	background-image: url('https://kristiania.no/wp-content/themes/hk/dist/images/social/HK Ikon-Snapchat-stor.svg');
+}
+.social-youtube {
+	background-image: url('https://kristiania.no/wp-content/themes/hk/dist/images/social/HK Ikon-Youtube-stor.svg');
+}
+.social-twitter:hover {
+	background-image: url('https://kristiania.no/wp-content/themes/hk/dist/images/social/HK Ikon-Twitter-stor-hover.svg');
+}
+.social-facebook:hover {
+	background-image: url('https://kristiania.no/wp-content/themes/hk/dist/images/social/HK Ikon-FB-stor-hover.svg');
+}
+.social-instagram:hover {
+	background-image: url('https://kristiania.no/wp-content/themes/hk/dist/images/social/HK Ikon-IG-stor-hover.svg');
+}
+.social-linkedin:hover {
+	background-image: url('https://kristiania.no/wp-content/themes/hk/dist/images/social/HK Ikon-Linkedin-stor-hover.svg');
+}
+.social-snapchat:hover {
+	background-image: url('https://kristiania.no/wp-content/themes/hk/dist/images/social/HK Ikon-Snapchat-stor-hover.svg');
+}
+.social-youtube:hover {
+	background-image: url('https://kristiania.no/wp-content/themes/hk/dist/images/social/HK Ikon-Youtube-stor-hover.svg');
+}
 
-	.frame-3{
-		background-image: url('../../assets/img/kvadraturen.jpg');
-		background-size: cover;
-	}
-
-	.frame-4{
-		background-image: url('../../assets/img/brenneriveien.jpg');
-		background-size: cover;
-	}
-
-	.campus-text{
-		margin-top:30px;
-	}
-
-	#right-box{
-		background-image: url('../../assets/img/studenter1.jpg');
-		height: 350px;
-		background-size: cover;
-		background-position: center;
-	}
-
-	#left-box{
-		height: 350px;
-	}
-
-	.footer{
-		background-color: #68789B;
-		text-align:center;
-
-		position: absolute;
-  		width: 100%;
-	}
-
-	.campus-thumb-container {
-		padding-left: 3rem!important;
-		padding-right: 0rem!important;
-	}
-
-
+/* Contains the campus photo thumbnail */
+.campus-thumb-container {
+	padding-left: 3rem!important;
+	padding-right: 0rem!important;
+}
 
 @media (min-width: 768px) {
-
 	.w-md-50 {
 		width: 50%!important;
 	}
 
-.campus-thumb-container {
+	.campus-thumb-container {
 		padding-left: 3rem!important;
 		padding-right: 3rem!important;
 	}
-
-
- }
-
-#main-nav {
-	font-family: 'Graphik Bold';
 }
 
-/* hide the wp admin bar while we are developing because its in the way */
-body {
-            margin-top: -28px;
-            padding-bottom: 28px;
-        }
-        body.admin-bar #wphead {
-            padding-top: 0;
-        }
-        body.admin-bar #footer {
-            padding-bottom: 28px;
-        }
-        #wpadminbar {
-            top: auto !important;
-            bottom: 0;
-        }
-        #wpadminbar .quicklinks .menupop ul {
-            bottom: 28px;
-        }
-/* //// */
+/* Helper class to reset padding */
+.no-padding { padding: 0; }
+
+/* Set height for the 50/50 split box */
+.split-box {
+    height: 511px;
+}
+
+/* Helper class to position something in the dead center hor/vert */
+.place-center {
+    position:absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+/* The image for the 50/50 split boxes */
+.image-box {
+    height: 511px;
+    width:50%;
+    background-position:center; 
+    background-repeat:no-repeat; 
+    background-size: cover;
+}
+
+/* Quick nav shortcuts styling */
+.quick-nav ul {
+	padding:0;
+	margin:0;
+}
+.quick-nav li {
+	list-style: none;
+	padding:0;
+	margin:0;
+}
+.quick-nav button {
+	width: 100%;
+	text-align:left;
+}
 
 
-        .no-padding { padding: 0; }
-		.split-box {
-            height: 511px;
-        }
-
-        .place-center {
-            position:absolute;
-            top: 50%;
-            left:50%;
-            transform: translate(-50%,-50%);
-        }
-        .image-box {
-            height: 511px;
-            width:50%;
-            background-position:center; 
-            background-repeat:no-repeat; 
-            background-size: cover;
-        }
-
-
-		.quick-nav {
-
-		}
-		.quick-nav ul {
-			padding:0;
-			margin:0;
-		}
-		.quick-nav li {
-			list-style: none;
-			padding:0;
-			margin:0;
-		}
-		.quick-nav button {
-			width: 100%;
-			text-align:left;
-		}
-
-
-	@media(max-width: 540px){
-		.place-center{
-			position:absolute;
-			top: 10%;
-			left:10%;
-			transform: translate(-5%,-5%);
-			font-size: 15px;
-		}
+@media(max-width: 540px){
+	.place-center{
+		position:absolute;
+		top: 10%;
+		left:10%;
+		transform: translate(-5%,-5%);
+		font-size: 15px;
 	}
-
-.slide-container {
-
 }
+
+/* Front page slideshow styling */
 .slide {
     background-position: center;
     background-repeat: no-repeat;
@@ -243,4 +255,90 @@ body {
 .slick-list,
 .slick-track {
     height: 100%;
+}
+
+/* Maps part styling */
+#maps {
+	height: 100%;
+}
+#maps-floating-panel {
+	position: absolute;
+	bottom: 10px;
+	left: 50%;
+	transform: translate(-50%);
+	z-index: 5;
+	padding: 5px;
+	text-align: center;
+	font-family: 'Graphik Web','sans-serif';
+}
+
+#maps-floating-panel .row {
+	margin: 5px auto;
+	padding: 15px 5px;
+	background-color: white;
+	border:1px solid black;
+}
+
+/* Floorplan styling */
+.wrap {
+}
+.wrap img {
+	position:absolute;
+}
+.floor { 
+	width: 100%;
+	opacity: 1;
+}
+.floor:hover { 
+	opacity: 1;
+}
+.floor-active > a > .floor:not(.selected) {
+	opacity: 0.1!important;
+}
+
+/* Shortcuts links styling */
+.shortcut-grid {
+    list-style: none;
+    padding:0;
+    margin: 0 0 5%;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+.shortcut-grid li {
+    display: inline-block;
+}
+.shortcut-li {
+    position:relative;
+}
+.shortcut-link {
+    height: 250px;
+    width: 250px;
+    margin-bottom: 5px;
+    display:block;
+    background-color:#EFEFEF;
+    color: black;
+    position:relative;
+    border-bottom: 5px solid #C9243F;
+    transition: 1s ease;
+}
+.shortcut-link:hover {
+    color: #C9243F;
+}
+.shortcut-icon {
+    position: absolute;
+    left:50%;
+    top: 50px;
+    transform: translate(-50%);
+
+    font-size: 5rem;
+    display:block;
+}
+.shortcut-text {
+    position:absolute;
+    display:block;
+
+    bottom:50px;
+
+    left:50%;
+    transform: translate(-50%);
 }

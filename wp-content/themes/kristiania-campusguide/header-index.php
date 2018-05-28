@@ -6,8 +6,6 @@
         <!-- styles -->                           
         <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
         <?php wp_head(); ?>
-        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-
     </head>     
     <body class="<?php echo implode(' ', get_body_class()); ?>"> 
         <header> 
