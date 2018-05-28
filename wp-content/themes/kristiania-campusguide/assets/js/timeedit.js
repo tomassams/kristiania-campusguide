@@ -96,27 +96,48 @@ function requestInfo(day, thisWeek, nextWeek, roomObjectID) {
 function generateForm(timeEditObject) {
     let rowSize = timeEditObject.reservations.length;
     let table = document.getElementById('content-table');
+
     for (let i = 0; i < rowSize; ++i) {
         table.insertRow(0);
         for (let j = 0; j < columnSize; ++j) {
             table.rows[0].insertCell(j);
         }
-    }
+    }    
 }
 
 function fillForm(timeEditObject) {
     let rowSize = timeEditObject.reservations.length;
     let table = document.getElementById('content-table');
+    
+
+
     for (let i = 0; i < rowSize; ++i) { 
-        table.rows[i].cells[0].innerHTML = timeEditObject.reservations[i].startdate;
-        table.rows[i].cells[1].innerHTML = timeEditObject.reservations[i].starttime;
-        table.rows[i].cells[2].innerHTML = timeEditObject.reservations[i].columns[0];
-        table.rows[i].cells[3].innerHTML = timeEditObject.reservations[i].columns[1];
-        table.rows[i].cells[4].innerHTML = timeEditObject.reservations[i].columns[2];
+        table.rows[i+1].cells[0].innerHTML = timeEditObject.reservations[i].startdate;
+        table.rows[i+1].cells[1].innerHTML = timeEditObject.reservations[i].starttime;
+        table.rows[i+1].cells[2].innerHTML = timeEditObject.reservations[i].columns[0];
+        table.rows[i+1].cells[3].innerHTML = timeEditObject.reservations[i].columns[1];
+        table.rows[i+1].cells[4].innerHTML = timeEditObject.reservations[i].columns[2];
     }
 }
 
 function emptyForm() {
     let table = document.getElementById('content-table');
     table.innerHTML = '';
+}
+
+function generateHeader() {
+    let table = document.getElementById('content-table');
+    let header = table.createTHead();
+    let row = header.insertRow(0);
+    let cell = row.insertCell(0);
+    cell.innerHTML = '<b>Dato</b>';
+    cell = row.insertCell(1);
+    cell.innerHTML = '<b>Tid</b>';
+    cell = row.insertCell(2);
+    cell.innerHTML = '<b>Emne</b>';
+    cell = row.insertCell(3);
+    cell.innerHTML = '<b>Klasse/Student</b>';
+    cell = row.insertCell(4);
+    cell.innerHTML = '<b>Aktivitet</b>';
+    header.style.backgroundColor = '#68789B';
 }
