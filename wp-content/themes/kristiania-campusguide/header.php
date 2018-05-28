@@ -24,7 +24,10 @@
 
                 <form>
                     <p style="margin:auto; text-align:center; font-family:'Graphik Bold';">Velg dato</p>
-                    <input type="date" class="form-control"id="date-input" min="2017-01-01" max="2025-01-01" style="margin:auto; width:200px; padding-left: 50px;">
+                    <div class="input-group">
+                        <input type="date" class="form-control"id="date-input" min="2017-01-01" max="2025-01-01" style="text-align:center; padding-left: 50px;">
+                        <button type="button" class="btn btn-outline-success form-control" onclick="previousRoom()">Oppdater</button>
+                    </div>
                 </form>
                 
                     <div id="content" class="table-responsive">
