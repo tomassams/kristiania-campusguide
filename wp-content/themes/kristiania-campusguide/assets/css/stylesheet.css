@@ -249,10 +249,11 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: 'Graphik Web','sans-serif';
 }
 
-#maps-floating-panel div {
+#maps-floating-panel .row {
 	margin: 5px auto;
-	padding: 5px;
+	padding: 15px 5px;
 	background-color: white;
+	border:1px solid black;
 }
 
 /* Floorplan styling */
