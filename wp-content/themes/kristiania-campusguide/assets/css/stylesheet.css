@@ -48,6 +48,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Hover for the campus navigation */
+.campus-boxes-container a > div {
+	transition: 1s ease;
+}
+
+/* Hover for the campus navigation */
 .campus-boxes-container a:hover > div {
 	background-color:black;
 }
@@ -89,6 +94,22 @@ h1, h2, h3, h4, h5, h6 {
 	background-color: white;
 	opacity: 0.9;
 	font-family: 'Graphik Bold';
+}
+
+#main-nav a {
+	transition: 1s ease;
+}
+#main-nav a:hover {
+}
+#main-nav a.active {
+	text-decoration:underline;
+}
+h1 a {
+	color: black;
+	transition: 1s ease;
+}
+h1 a:hover {
+	color: #C9243F!important;
 }
 
 /* The image-frame (border) for the campus navigation thumnails */
@@ -298,6 +319,7 @@ h1, h2, h3, h4, h5, h6 {
     color: black;
     position:relative;
     border-bottom: 5px solid #C9243F;
+    transition: 1s ease;
 }
 .shortcut-link:hover {
     color: #C9243F;
