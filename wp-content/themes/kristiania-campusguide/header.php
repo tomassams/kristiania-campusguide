@@ -7,7 +7,7 @@
         <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
         <?php wp_head(); ?>
     </head>     
-    <body class="<?php echo implode(' ', get_body_class()); ?>"> 
+    <body id="body-top" class="<?php echo implode(' ', get_body_class()); ?>"> 
         <!--
             Modal placeholder
             <a type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</a>

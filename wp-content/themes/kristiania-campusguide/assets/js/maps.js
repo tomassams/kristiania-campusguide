@@ -18,8 +18,12 @@ $('#floor-buttons > button').hover(function() {
 var map;
 
 var markerArray = [];
+
 var infoWindowArray = [];
 var infoWindow;
+
+var placesInfoWindow;
+var placesInfoWindowArray = [];
 
 // initialize map, which will altso listen for customization changes
 function initMap() {
@@ -47,7 +51,9 @@ function initMap() {
 
     for (var j = 0; j < filterTypes.length; j++) {
         filterType = filterTypes[j];
-        infoWindow = new google.maps.InfoWindow();
+        placesInfoWindow = new google.maps.InfoWindow({
+            pixelOffset: new google.maps.Size(-23,-5)
+        });
         var service = new google.maps.places.PlacesService(map);
         service.nearbySearch({
             location: pyrmont,
@@ -174,7 +180,7 @@ function centerOnCampus(geocoder, address, map) {
             markerArray.push(marker);
 
             infoWindow = new google.maps.InfoWindow({
-                content: campusName
+                content: campusName,
             });
 
             // open an infowindow on the marker position
@@ -272,8 +278,8 @@ function createMarker(place, type) {
             }
             return out;
         }
-        infoWindow.setContent(place.name + getRate());
-        infoWindow.open(map, this);
+        placesInfoWindow.setContent(place.name + getRate());
+        placesInfoWindow.open(map, this);
         if (marker.getAnimation() == null) {
             marker.setAnimation(google.maps.Animation.BOUNCE);
         } else {
