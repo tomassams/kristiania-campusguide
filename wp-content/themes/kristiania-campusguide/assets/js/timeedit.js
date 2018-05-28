@@ -31,7 +31,9 @@ function process(roomObjectID) {
         requestInfo(dateArray[2], thisWeekFormatted, nextWeekFormatted, roomObjectID);
 
         // open the modal window
-        $('.floorplan-modal').modal();
+        if (!$('.floorplan-modal').is(':visible')) {
+            $('.floorplan-modal').modal();
+        }
     }
 }
 
@@ -141,4 +143,8 @@ function generateHeader() {
     cell = row.insertCell(4);
     cell.innerHTML = '<b>Aktivitet</b>';
     header.style.backgroundColor = '#68789B';
+}
+
+function previousRoom() {
+    process(lastRoom);
 }
