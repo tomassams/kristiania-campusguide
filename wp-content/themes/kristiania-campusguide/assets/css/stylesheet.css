@@ -107,6 +107,55 @@ h1, h2, h3, h4, h5, h6 {
 	position: absolute;
 		width: 100%;
 }
+.social-container ul,
+.social-container li {
+	list-style: none;
+	display:inline-block;
+}
+.social {
+	width: 40px;
+	height: 40px;
+	display:inline-block;
+	background-size:cover;
+	background-position:center;
+	background-repeat:no-repeat;
+}
+.social-twitter {
+	background-image: url('https://kristiania.no/wp-content/themes/hk/dist/images/social/HK Ikon-Twitter-stor.svg');
+}
+.social-facebook {
+	background-image: url('https://kristiania.no/wp-content/themes/hk/dist/images/social/HK Ikon-FB-stor.svg');
+}
+.social-instagram {
+	background-image: url('https://kristiania.no/wp-content/themes/hk/dist/images/social/HK Ikon-IG-stor.svg');
+}
+.social-linkedin {
+	background-image: url('https://kristiania.no/wp-content/themes/hk/dist/images/social/HK Ikon-Linkedin-stor.svg');
+}
+.social-snapchat {
+	background-image: url('https://kristiania.no/wp-content/themes/hk/dist/images/social/HK Ikon-Snapchat-stor.svg');
+}
+.social-youtube {
+	background-image: url('https://kristiania.no/wp-content/themes/hk/dist/images/social/HK Ikon-Youtube-stor.svg');
+}
+.social-twitter:hover {
+	background-image: url('https://kristiania.no/wp-content/themes/hk/dist/images/social/HK Ikon-Twitter-stor-hover.svg');
+}
+.social-facebook:hover {
+	background-image: url('https://kristiania.no/wp-content/themes/hk/dist/images/social/HK Ikon-FB-stor-hover.svg');
+}
+.social-instagram:hover {
+	background-image: url('https://kristiania.no/wp-content/themes/hk/dist/images/social/HK Ikon-IG-stor-hover.svg');
+}
+.social-linkedin:hover {
+	background-image: url('https://kristiania.no/wp-content/themes/hk/dist/images/social/HK Ikon-Linkedin-stor-hover.svg');
+}
+.social-snapchat:hover {
+	background-image: url('https://kristiania.no/wp-content/themes/hk/dist/images/social/HK Ikon-Snapchat-stor-hover.svg');
+}
+.social-youtube:hover {
+	background-image: url('https://kristiania.no/wp-content/themes/hk/dist/images/social/HK Ikon-Youtube-stor-hover.svg');
+}
 
 /* Contains the campus photo thumbnail */
 .campus-thumb-container {
