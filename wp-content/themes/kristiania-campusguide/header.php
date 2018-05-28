@@ -10,11 +10,8 @@
         <link rel="stylesheet" type="text/css" href="calendar.css"
     </head>     
     <body id="body-top" class="<?php echo implode(' ', get_body_class()); ?>"> 
-        <!--
-            Modal placeholder
-            <a type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</a>
-
-            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <!-- hidden modal containing floorplan info -->
+            <div class="modal fade floorplan-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -24,7 +21,17 @@
                     </button>
                   </div>
                   <div class="modal-body">
-                    <p>Modal body text goes here.</p>
+
+                <form>
+                    <p style="margin:auto; text-align:center; font-family:'Graphik Bold';">Velg dato</p>
+                    <input type="date" class="form-control"id="date-input" min="2017-01-01" max="2025-01-01" style="margin:auto; width:200px;">
+                </form>
+                
+                    <div id="content">
+                        <table id="content-table" class="table table-striped">
+
+                        </table>   
+                    </div>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -32,8 +39,8 @@
               </div>
               </div>
             </div>
+            <!-- end modal -->
 
-        -->
         <header> 
             <!-- navigation menu & logo -->             
             <nav class="navbar navbar-light navbar-expand-md fixed-top" id="main-nav"> 
