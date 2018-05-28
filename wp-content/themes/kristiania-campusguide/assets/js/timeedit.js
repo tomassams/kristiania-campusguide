@@ -1,5 +1,6 @@
 var bGenerateForm = true;
 const columnSize = 5;
+let lastRoom = null;
 
 let now = new Date().toISOString().substr(0, 10);
 document.querySelector("#date-input").value = now;
@@ -9,6 +10,7 @@ function process(roomObjectID) {
     var dateInputString = dateInput.value; // get value from element
     var dateArray = dateInputString.split(/\s*\-\s*/g); // split string by dash
     var today = new Date(dateInputString);
+    lastRoom = roomObjectID;
     
     var year = dateArray[0];
     if (year < 2017) {
@@ -82,7 +84,6 @@ function requestInfo(day, thisWeek, nextWeek, roomObjectID) {
     const part2 = '.4&ox=0&p=';
     const part3 = '.x%2C';
     const part4 = '.x';
-    
     let url = part1 + roomObjectID + part2 + thisWeek + part3 + nextWeek + part4;
     
     xhttp.open("GET", url, true);
