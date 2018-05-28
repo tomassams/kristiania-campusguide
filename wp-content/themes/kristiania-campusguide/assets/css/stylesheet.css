@@ -243,6 +243,8 @@ h1, h2, h3, h4, h5, h6 {
 #maps-floating-panel {
 	position: absolute;
 	bottom: 10px;
+	left: 50%;
+	transform: translate(-50%);
 	z-index: 5;
 	padding: 5px;
 	text-align: center;
