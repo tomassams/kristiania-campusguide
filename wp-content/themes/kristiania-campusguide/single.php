@@ -1,4 +1,9 @@
 <?php
+/***
+**** This theme file contains the templating for the single post page
+***/
+?>
+<?php
 get_header(); ?>
 
 <?php if ( have_posts() ) : ?>
@@ -13,7 +18,7 @@ get_header(); ?>
                 </article>
             <?php endwhile; ?>
         <?php else : ?>
-            <p><?php _e( 'Sorry, no posts matched your criteria.', 'kristianiacampusguide' ); ?></p>
+            <p>Ingen innlegg matchet kriteriene dine</p>
         <?php endif; ?>
 
 <?php get_footer(); ?>

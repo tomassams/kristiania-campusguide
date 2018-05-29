@@ -1,4 +1,10 @@
 <?php
+/***
+**** This theme file contains the handling of custom functionality, enqueueing of 
+**** scripts and styles, sidebars, widget areas, customizer options etc.
+***/
+?>
+ <?php
 if ( ! function_exists( 'kristianiacampusguide_setup' ) ) :
 
 function kristianiacampusguide_setup() {
@@ -184,6 +190,9 @@ if ( ! function_exists( 'kristianiacampusguide_enqueue_scripts' ) ) :
     wp_deregister_style( 'stylesheet' );
     wp_enqueue_style( 'stylesheet', get_template_directory_uri() . '/assets/css/stylesheet.css', false, null, 'all');
 
+    wp_deregister_style( 'calendar' );
+    wp_enqueue_style( 'calendar', get_template_directory_uri() . '/assets/css/calendar.css', false, null, 'all');
+
     wp_deregister_script( 'mainjs' );
     wp_enqueue_script( 'mainjs', get_template_directory_uri() . '/assets/js/main.js', false, null, true);
 
@@ -192,6 +201,9 @@ if ( ! function_exists( 'kristianiacampusguide_enqueue_scripts' ) ) :
 
     wp_deregister_script( 'scroll-nav' );
     wp_enqueue_script( 'scroll-nav', get_template_directory_uri() . '/assets/js/scrolling-nav.js', false, null, true);
+
+    wp_deregister_script( 'timeedit' );
+    wp_enqueue_script( 'timeedit', get_template_directory_uri() . '/assets/js/timeedit.js', false, null, true);
 
     }
     add_action( 'wp_enqueue_scripts', 'kristianiacampusguide_enqueue_scripts' );

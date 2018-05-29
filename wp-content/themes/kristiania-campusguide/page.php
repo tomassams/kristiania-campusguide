@@ -1,4 +1,9 @@
 <?php
+/***
+**** This theme file contains the templating for the single pages
+***/
+?>
+<?php
 get_header(); ?>
 
 <?php if ( have_posts() ) : ?>

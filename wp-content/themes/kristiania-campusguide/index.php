@@ -1,4 +1,9 @@
 <?php
+/***
+**** This theme file contains the templating for the front page / main page
+***/
+?>
+<?php
 get_header('index'); ?>
 
 <?php if ( is_active_sidebar( 'campus_navigation' ) ) : ?>
