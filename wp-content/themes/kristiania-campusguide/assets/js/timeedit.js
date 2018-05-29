@@ -1,34 +1,32 @@
-var bGenerateForm = true;
-const columnSize = 5;
-let lastRoom = null;
+let bGenerateForm = true;
+const columnSize  = 5;
+let lastRoom      = null;
 
 function process(roomObjectID) {
-    var dateInput = document.getElementById('date-input');
+    var dateInput       = document.getElementById('date-input'); // get the input object
+    var dateInputString = dateInput.value;                       // get value from element
+    var dateArray       = dateInputString.split(/\s*\-\s*/g);    // remove dash
+    var today           = new Date(dateInputString);             // create a date object from string
+    lastRoom            = roomObjectID;                          // last visited room is this one
+    var future          = new Date(today);
 
-    var dateInputString = dateInput.value; // get value from element
-    var dateArray = dateInputString.split(/\s*\-\s*/g); // split string by forward slash
-    var today = new Date(dateInputString);
-    lastRoom = roomObjectID;
-    
-    var year = dateArray[0];
-
-    var future = new Date(today);
     future.setDate(today.getDate() + 7);
-    var futureStr = future.toLocaleDateString('en-US');
-    // remove the slash
-    var futureArray = futureStr.split(/\s*\/\s*/g);
     
+    var futureStr   = future.toLocaleDateString('en-US');
+    var futureArray = futureStr.split(/\s*\/\s*/g);              // remove slash
+
     prependZero(futureArray);
     
+    // needs to be in yyyymmdd format for url
     let nextWeekFormatted = futureArray[2] + futureArray[0] + futureArray[1];
     let thisWeekFormatted = dateArray[0] + dateArray[1] + dateArray[2];
+    // request data
     requestInfo(dateArray[2], thisWeekFormatted, nextWeekFormatted, roomObjectID);
 
     // open the modal window
     if (!$('.floorplan-modal').is(':visible')) {
         $('.floorplan-modal').modal();
     }
-    
 }
 
 // prepend a zero to day or month
@@ -47,7 +45,7 @@ function prependZero(futureArray) {
 // based on the input from user.
 function requestInfo(day, thisWeek, nextWeek, roomObjectID) {
     var xhttp = new XMLHttpRequest();
-    var obj = null; 
+    var obj   = null; 
     
     xhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
@@ -80,7 +78,7 @@ function requestInfo(day, thisWeek, nextWeek, roomObjectID) {
     const part2 = '.4&ox=0&p=';
     const part3 = '.x%2C';
     const part4 = '.x';
-    let url = part1 + roomObjectID + part2 + thisWeek + part3 + nextWeek + part4;
+    let url     = part1 + roomObjectID + part2 + thisWeek + part3 + nextWeek + part4;
     
     xhttp.open("GET", url, true);
     xhttp.send();
@@ -92,7 +90,7 @@ function requestInfo(day, thisWeek, nextWeek, roomObjectID) {
 // the number of reservations found in timeedit
 function generateForm(timeEditObject) {
     let rowSize = timeEditObject.reservations.length;
-    let table = document.getElementById('content-table');
+    let table   = document.getElementById('content-table');
 
     for (let i = 0; i < rowSize; ++i) {
         table.insertRow(0);
@@ -106,7 +104,7 @@ function generateForm(timeEditObject) {
 
 function fillForm(timeEditObject) {
     let rowSize = timeEditObject.reservations.length;
-    let table = document.getElementById('content-table');
+    let table   = document.getElementById('content-table');
 
     for (let i = 0; i < rowSize; ++i) { 
         table.rows[i+1].cells[0].innerHTML = timeEditObject.reservations[i].startdate;
@@ -118,15 +116,16 @@ function fillForm(timeEditObject) {
 }
 
 function emptyForm() {
-    let table = document.getElementById('content-table');
+    let table       = document.getElementById('content-table');
     table.innerHTML = '';
 }
 
 function generateHeader() {
-    let table = document.getElementById('content-table');
+    let table  = document.getElementById('content-table');
     let header = table.createTHead();
-    let row = header.insertRow(0);
-    let cell = row.insertCell(0);
+    let row    = header.insertRow(0);
+    let cell   = row.insertCell(0);
+    
     cell.innerHTML = '<b>Dato</b>';
     cell = row.insertCell(1);
     cell.innerHTML = '<b>Tid</b>';
