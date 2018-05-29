@@ -55,10 +55,18 @@ $('#floor-container > a > img').hover(function() {
 $('.embed-responsive-item').click(function() {
 
   var floorContainer = document.getElementById('floor-container');
+  var clickedFloor = $(this).children('img').attr('id');
 
-  $('#floor-container').fadeOut('slow');
+  $('#floor-container').fadeOut('slow'); // Fade out the building model
+  $('#floorplan-container').fadeIn('slow'); // Fade in the floor plan container
 
-  $('#floorplan-container').fadeIn('slow');
+  if(clickedFloor === undefined) {
+    // do nothing
+  }
+  else {
+    $('#floor-'+clickedFloor+'-svg').removeClass('d-none');
+    $('#floor-'+clickedFloor+'-svg').siblings().addClass('d-none');
+  }
 
 });
 
@@ -72,10 +80,10 @@ $('#floor-buttons button').click(function() {
 
   var floorContainer = document.getElementById('floor-container');
 
-  $('#floor-container').fadeOut('slow');
+  $('#floor-container').fadeOut('slow'); // Fade out the building model
+  $('#floorplan-container').fadeIn('slow'); // Fade in the floor plan container
 
-  $('#floorplan-container').fadeIn('slow');
-
+  // Clicking on the floor selector should give you the building model again
   if(clickedButton === 'building') {
 
     $('#floor-container').fadeIn('slow');
@@ -85,6 +93,7 @@ $('#floor-buttons button').click(function() {
     $('#floorplan-container div').addClass('d-none');
 
   }
+  // Clicking on anything else should display the correct div
   else {
 
     $('#floor-'+clickedButton+'-svg').removeClass('d-none');
