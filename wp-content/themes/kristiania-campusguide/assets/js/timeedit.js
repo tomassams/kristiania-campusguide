@@ -142,7 +142,8 @@ function generateHeader() {
     cell.innerHTML = '<b>Klasse/Student</b>';
     cell = row.insertCell(4);
     cell.innerHTML = '<b>Aktivitet</b>';
-    header.style.backgroundColor = '#68789B';
+    header.style.backgroundColor = '#000000';
+    header.style.color = '#FFFFFF';
 }
 
 function previousRoom() {

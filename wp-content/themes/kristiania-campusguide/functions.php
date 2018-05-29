@@ -205,6 +205,14 @@ if ( ! function_exists( 'kristianiacampusguide_enqueue_scripts' ) ) :
     wp_deregister_script( 'timeedit' );
     wp_enqueue_script( 'timeedit', get_template_directory_uri() . '/assets/js/timeedit.js', false, null, true);
 
+    wp_deregister_script( 'jquery-ui' );
+    wp_enqueue_script( 'jquiery-ui', 'https://code.jquery.com/ui/1.12.1/jquery-ui.min.js', false, null, false);
+
+    wp_deregister_style( 'jquery-ui' );
+    wp_enqueue_style( 'jquiery-ui', 'https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css', false, null, 'all');
+
+
+
     }
     add_action( 'wp_enqueue_scripts', 'kristianiacampusguide_enqueue_scripts' );
 endif;
