@@ -61,11 +61,22 @@ $('.embed-responsive-item').click(function() {
   $('#floorplan-container').fadeIn('slow'); // Fade in the floor plan container
 
   if(clickedFloor === undefined) {
-    // do nothing
+
+    $('#floor-container').fadeIn('slow');
+
+    $('#floorplan-container').fadeOut('slow');
+
+    $('#floorplan-container div').addClass('d-none');
+    
   }
   else {
     $('#floor-'+clickedFloor+'-svg').removeClass('d-none');
     $('#floor-'+clickedFloor+'-svg').siblings().addClass('d-none');
+
+    $('#floor-buttons button[value="'+clickedFloor+'"]').addClass('btn-dark');
+    $('#floor-buttons button[value="'+clickedFloor+'"]').siblings().addClass('btn-secondary').removeClass('btn-dark');
+
+
   }
 
 });
