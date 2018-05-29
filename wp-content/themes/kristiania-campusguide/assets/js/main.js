@@ -12,39 +12,85 @@ $(document).ready(function(){
 });
 });
 
+
+
 // Makes sure the campus we are on is selected in the dropdown by default
   $('#end option').filter(function() { 
     return ($(this).text() == campusName);
 }).prop('selected', true);
 
-  $('#floor-container > a > img').hover(function() {
+
+
+// The campus 3d model floor selector handling
+
+// Toggle active-class on button/floor hover, toggle selected-class on hovered target element
+$('#floor-buttons > button').hover(function() {
+
+  // No hover on building
+  if($(this).val() === 'building') {
+    // do nothing
+  }
+  // Hover on everything else
+  else {
 
     $('#floor-container').toggleClass('floor-active');
 
-    $(this).toggleClass('selected').siblings().toggleClass('selected');
+    var hoveredFloor = $(this).val();
+
+    $('#' + hoveredFloor).toggleClass('selected').siblings().toggleClass('selected');
+
+  }
+});
+
+
+$('#floor-container > a > img').hover(function() {
+
+  $('#floor-container').toggleClass('floor-active');
+
+  $(this).toggleClass('selected').siblings().toggleClass('selected');
+
 })
 
-$('#floor-buttons > button').hover(function() {
+// On floor- or button-click, fade out the 3d model and fade in the correct floor plan
+$('.embed-responsive-item').click(function() {
 
-        $('#floor-container').toggleClass('floor-active');
+  var floorContainer = document.getElementById('floor-container');
 
-        var hoveredFloor = $(this).val();
+  $('#floor-container').fadeOut('slow');
 
-        $('#' + hoveredFloor).toggleClass('selected').siblings().toggleClass('selected');
+  $('#floorplan-container').fadeIn('slow');
 
-    });
+});
+
+// On floor- or button-click, fade out the 3d model and fade in the correct floor plan
+$('#floor-buttons button').click(function() {
+
+  var clickedButton = $(this).val();
+
+  $(this).addClass('btn-dark').removeClass('btn-secondary');
+  $(this).siblings().addClass('btn-secondary').removeClass('btn-dark');
+
+  var floorContainer = document.getElementById('floor-container');
+
+  $('#floor-container').fadeOut('slow');
+
+  $('#floorplan-container').fadeIn('slow');
+
+  if(clickedButton === 'building') {
+
+    $('#floor-container').fadeIn('slow');
+
+    $('#floorplan-container').fadeOut('slow');
+
+    $('#floorplan-container div').addClass('d-none');
+
+  }
+  else {
+
+    $('#floor-'+clickedButton+'-svg').removeClass('d-none');
+    $('#floor-'+clickedButton+'-svg').siblings().addClass('d-none');
+
+  }
 
 
-
-
-  $('.embed-responsive-item').click(function() {
-
-    console.log('floor clicked');
-
-    var floorContainer = document.getElementById('floor-container');
-
-    $('#floor-container').fadeOut('slow');
-
-    $('#floorplan-container').fadeIn('slow');
-
-  });
+});
