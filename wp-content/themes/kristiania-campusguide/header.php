@@ -16,7 +16,10 @@
     <script>
         $( function() {
             $("#date-input").datepicker();
-        } ); 
+            $( "#date-input" ).datepicker( "option", "dateFormat", "yy-mm-dd" );
+            $("#date-input").datepicker("setDate", new Date());
+        });
+         
     </script>
         <!-- Hidden Modal which will be populated with the floorplan info -->
         <div class="modal fade floorplan-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">

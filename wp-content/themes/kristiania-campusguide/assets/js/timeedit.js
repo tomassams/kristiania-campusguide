@@ -2,39 +2,33 @@ var bGenerateForm = true;
 const columnSize = 5;
 let lastRoom = null;
 
-let now = new Date().toISOString().substr(0, 10);
-document.querySelector("#date-input").value = now;
-
 function process(roomObjectID) {
     var dateInput = document.getElementById('date-input');
+
     var dateInputString = dateInput.value; // get value from element
-    var dateArray = dateInputString.split(/\s*\-\s*/g); // split string by dash
+    var dateArray = dateInputString.split(/\s*\-\s*/g); // split string by forward slash
     var today = new Date(dateInputString);
     lastRoom = roomObjectID;
     
     var year = dateArray[0];
-    if (year < 2017) {
-        alert('oopps! Year must be > 2017');
-    } else if (year > 2100) {
-        alert('ooops! Too far into the future');
-    } else {
-        var future = new Date(today);
-        future.setDate(today.getDate() + 7);
-        var futureStr = future.toLocaleDateString('en-US');
-        // remove the slash
-        var futureArray = futureStr.split(/\s*\/\s*/g);
-        
-        prependZero(futureArray);
-        
-        let nextWeekFormatted = futureArray[2] + futureArray[0] + futureArray[1];
-        let thisWeekFormatted = dateArray[0] + dateArray[1] + dateArray[2];
-        requestInfo(dateArray[2], thisWeekFormatted, nextWeekFormatted, roomObjectID);
 
-        // open the modal window
-        if (!$('.floorplan-modal').is(':visible')) {
-            $('.floorplan-modal').modal();
-        }
+    var future = new Date(today);
+    future.setDate(today.getDate() + 7);
+    var futureStr = future.toLocaleDateString('en-US');
+    // remove the slash
+    var futureArray = futureStr.split(/\s*\/\s*/g);
+    
+    prependZero(futureArray);
+    
+    let nextWeekFormatted = futureArray[2] + futureArray[0] + futureArray[1];
+    let thisWeekFormatted = dateArray[0] + dateArray[1] + dateArray[2];
+    requestInfo(dateArray[2], thisWeekFormatted, nextWeekFormatted, roomObjectID);
+
+    // open the modal window
+    if (!$('.floorplan-modal').is(':visible')) {
+        $('.floorplan-modal').modal();
     }
+    
 }
 
 // prepend a zero to day or month
