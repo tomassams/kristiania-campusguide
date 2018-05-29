@@ -2,6 +2,34 @@ let bGenerateForm = true;
 const columnSize  = 5;
 let lastRoom      = null;
 
+// for dynamic modal title
+let roomMapping = [
+    {id: 53, room: "F101"},
+    {id: 57, room: "F103"},
+    {id: 61, room: "F204"},
+    {id: 62, room: "F205"},
+    {id: 63, room: "F206"},
+    {id: 64, room: "F207"},
+    {id: 65, room: "F208"},
+    {id: 66, room: "F209"},
+    {id: 67, room: "F210"},
+    {id: 58, room: "F201"},
+    {id: 59, room: "F202"},
+    {id: 60, room: "F203"},
+    {id: 70, room: "F303"},
+    {id: 71, room: "F304"},
+    {id: 72, room: "F305"},
+    {id: 73, room: "F306"},
+    {id: 74, room: "F307"},
+    {id: 75, room: "F308"},
+    {id: 76, room: "F309"},
+    {id: 77, room: "F310"},
+    {id: 78, room: "F311"},
+    {id: 68, room: "F301"},
+    {id: 79, room: "F312"},
+    {id: 69, room: "F302"}
+];
+
 function process(roomObjectID) {
     var dateInput       = document.getElementById('date-input'); // get the input object
     var dateInputString = dateInput.value;                       // get value from element
@@ -22,6 +50,12 @@ function process(roomObjectID) {
     let thisWeekFormatted = dateArray[0] + dateArray[1] + dateArray[2];
     // request data
     requestInfo(dateArray[2], thisWeekFormatted, nextWeekFormatted, roomObjectID);
+
+    // find current room title
+    let roomTitle = getRoomTitle(roomObjectID);
+    
+    // change modal title
+    $('#modalLabel').text("Rom: " + roomTitle);
 
     // open the modal window
     if (!$('.floorplan-modal').is(':visible')) {
@@ -125,7 +159,8 @@ function generateHeader() {
     let header = table.createTHead();
     let row    = header.insertRow(0);
     let cell   = row.insertCell(0);
-    
+
+    // insert cells
     cell.innerHTML = '<b>Dato</b>';
     cell = row.insertCell(1);
     cell.innerHTML = '<b>Tid</b>';
@@ -135,10 +170,24 @@ function generateHeader() {
     cell.innerHTML = '<b>Klasse/Student</b>';
     cell = row.insertCell(4);
     cell.innerHTML = '<b>Aktivitet</b>';
+
+    // style header
     header.style.backgroundColor = '#000000';
     header.style.color = '#FFFFFF';
 }
 
 function previousRoom() {
     process(lastRoom);
+}
+
+function getRoomTitle(roomID) {
+    let title = "";
+
+    roomMapping.forEach(function(element) {
+        if (element.id === roomID) {
+            title = element.room;
+        }
+    });
+
+    return title;
 }
