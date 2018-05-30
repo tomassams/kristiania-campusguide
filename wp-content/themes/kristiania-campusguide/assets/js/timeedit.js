@@ -86,12 +86,10 @@ function requestInfo(day, thisWeek, nextWeek, roomObjectID) {
             var timeEditObject = JSON.parse(xhttp.response);
             
             // remove unrelated instances
-            for (let i = 0; i < timeEditObject.reservations.length; ++i) {
-                let startdate = timeEditObject.reservations[i].startdate;
-                let startdateArr = startdate.split(/\s*\.\s*/g);
-                if (startdateArr[0] < day) {
-                    let item = timeEditObject.reservations.splice(i, 1);
-                }
+            let startdate = timeEditObject.reservations[0].startdate;
+            let startdateArr = startdate.split(/\s*\.\s*/g);
+            if (startdateArr[0] < day) {
+                let item = timeEditObject.reservations.splice(0, 1);
             }
             
             if (bGenerateForm) {
