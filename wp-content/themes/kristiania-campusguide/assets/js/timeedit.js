@@ -43,8 +43,10 @@ function process(roomObjectID) {
     var futureStr   = future.toLocaleDateString('en-US');
     var futureArray = futureStr.split(/\s*\/\s*/g);              // remove slash
 
-    prependZero(futureArray);
-    
+    if (futureArray !== undefined) {
+        prependZero(futureArray);
+    }
+
     // needs to be in yyyymmdd format for url
     let nextWeekFormatted = futureArray[2] + futureArray[0] + futureArray[1];
     let thisWeekFormatted = dateArray[0] + dateArray[1] + dateArray[2];
