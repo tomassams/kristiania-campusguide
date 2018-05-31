@@ -43,10 +43,8 @@ function process(roomObjectID) {
     var futureStr   = future.toLocaleDateString('en-US');
     var futureArray = futureStr.split(/\s*\/\s*/g);              // remove slash
 
-    if (futureArray !== undefined) {
-        prependZero(futureArray);
-    }
-
+    prependZero(futureArray);
+    
     // needs to be in yyyymmdd format for url
     let nextWeekFormatted = futureArray[2] + futureArray[0] + futureArray[1];
     let thisWeekFormatted = dateArray[0] + dateArray[1] + dateArray[2];
@@ -57,7 +55,7 @@ function process(roomObjectID) {
     let roomTitle = getRoomTitle(roomObjectID);
     
     // change modal title
-    $('#modalLabel').text("Rom: " + roomTitle);
+    $('#modalLabel').text("Timeplan for rom " + roomTitle + " (ukevisning)");
 
     // open the modal window
     if (!$('.floorplan-modal').is(':visible')) {

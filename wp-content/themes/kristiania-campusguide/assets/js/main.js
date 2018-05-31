@@ -49,6 +49,20 @@ $('#floor-container > a > img').hover(function() {
 
   $(this).toggleClass('selected').siblings().toggleClass('selected');
 
+  var hoveredFloor = $(this).attr('id');
+
+  if(hoveredFloor === undefined) {
+    $('#floor-buttons button[value="building"]').addClass('btn-success')
+    $('#floor-buttons button[value="building"]').siblings().addClass('btn-secondary').removeClass('btn-success');
+  }
+  else {
+
+  $('#floor-buttons button[value="'+hoveredFloor+'"]').addClass('btn-success')
+  $('#floor-buttons button[value="'+hoveredFloor+'"]').siblings().addClass('btn-secondary').removeClass('btn-success');
+
+  }
+
+
 })
 
 // On floor- or button-click, fade out the 3d model and fade in the correct floor plan
@@ -70,12 +84,12 @@ $('.embed-responsive-item').click(function() {
     
   }
   else {
+
     $('#floor-'+clickedFloor+'-svg').removeClass('d-none');
     $('#floor-'+clickedFloor+'-svg').siblings().addClass('d-none');
 
-    $('#floor-buttons button[value="'+clickedFloor+'"]').addClass('btn-dark');
-    $('#floor-buttons button[value="'+clickedFloor+'"]').siblings().addClass('btn-secondary').removeClass('btn-dark');
-
+    $('#floor-buttons button[value="'+clickedFloor+'"]').addClass('btn-success');
+    $('#floor-buttons button[value="'+clickedFloor+'"]').siblings().addClass('btn-secondary').removeClass('btn-success');
 
   }
 
@@ -86,16 +100,20 @@ $('#floor-buttons button').click(function() {
 
   var clickedButton = $(this).val();
 
-  $(this).addClass('btn-dark').removeClass('btn-secondary');
-  $(this).siblings().addClass('btn-secondary').removeClass('btn-dark');
+  $(this).addClass('btn-success').removeClass('btn-secondary');
+  $(this).siblings().addClass('btn-secondary').removeClass('btn-success');
 
   var floorContainer = document.getElementById('floor-container');
 
   $('#floor-container').fadeOut('slow'); // Fade out the building model
   $('#floorplan-container').fadeIn('slow'); // Fade in the floor plan container
 
+  $('#floor-buttons button[value="building"]').text('Tilbake');
+
   // Clicking on the floor selector should give you the building model again
   if(clickedButton === 'building') {
+
+    $('#floor-buttons button[value="building"]').text('Velg etasje');
 
     $('#floor-container').fadeIn('slow');
 

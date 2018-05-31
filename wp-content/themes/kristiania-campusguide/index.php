@@ -7,10 +7,12 @@
 get_header('index'); ?>
 
 <?php if ( is_active_sidebar( 'campus_navigation' ) ) : ?>
-            <div>
-                <?php dynamic_sidebar( 'campus_navigation' ); ?>
-            </div>
-        <?php endif; ?>
+<div>
+    <ul style="list-style:none">
+        <?php dynamic_sidebar( 'campus_navigation' ); ?>
+    </ul>
+</div>
+<?php endif; ?>
 
     <!-- Full width box text/image split -->
     <div class="container-fluid box-bg-2 no-padding">
@@ -28,9 +30,11 @@ get_header('index'); ?>
     </div>
 
 <?php if ( is_active_sidebar( 'shortcut_links_area' ) ) : ?>
-            <div class="container mt-5 mb-5">
-                <?php dynamic_sidebar( 'shortcut_links_area' ); ?>
-            </div>
-        <?php endif; ?>
+<div class="container mt-5 mb-5">
+    <ul style="list-style:none">
+        <?php dynamic_sidebar( 'shortcut_links_area' ); ?>
+    </ul>
+</div>
+<?php endif; ?>
 
 <?php get_footer(); ?>

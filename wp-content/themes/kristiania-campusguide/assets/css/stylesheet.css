@@ -68,11 +68,18 @@ list-style:none; }
 /* Contains the jumbotron or slider */
 .jumbotron {
 	background-image: url('../../assets/img/jumbotron.jpg');
-	background-attachment:fixed;
+	background-attachment:initial;
 	background-size: cover;
 	height: 500px;
 	background-position:center;
 }
+
+@media (min-width: 992px) { 
+	.jumbotron {
+		background-attachment:fixed!important; 
+	} 
+}
+
 
 /* Place the campus navigation on top of the jumbotron */
 .campus-boxes-container {
@@ -95,14 +102,15 @@ list-style:none; }
 /* The top nav bar */
 #main-nav {
 	background-color: white;
-	opacity: 0.9;
 	font-family: 'Graphik Bold';
 }
 
 #main-nav a {
 	transition: 1s ease;
+	color:black;
 }
 #main-nav a:hover {
+	text-decoration:underline;
 }
 #main-nav a.active {
 	text-decoration:underline;
@@ -135,6 +143,10 @@ h1 a:hover {
 .social-container li {
 	list-style: none;
 	display:inline-block;
+}
+ul {
+	padding:0;
+	margin:0;
 }
 .social {
 	width: 40px;
@@ -203,7 +215,32 @@ h1 a:hover {
 
 /* Set height for the 50/50 split box */
 .split-box {
+    height: 50vh;
+}
+
+/* The image for the 50/50 split boxes */
+.image-box {
+    height: 50vh;
+    width:50%;
+    background-position:center; 
+    background-repeat:no-repeat; 
+    background-size: cover;
+}
+.maps-box {
     height: 511px;
+    width:50%;
+    background-position:center; 
+    background-repeat:no-repeat; 
+    background-size: cover;
+}
+
+@media (min-width: 992px) { 
+	.split-box {
+		height: 511px;
+	}
+	.image-box {
+		height:511px; 
+	} 
 }
 
 /* Helper class to position something in the dead center hor/vert */
@@ -214,14 +251,6 @@ h1 a:hover {
     transform: translate(-50%,-50%);
 }
 
-/* The image for the 50/50 split boxes */
-.image-box {
-    height: 511px;
-    width:50%;
-    background-position:center; 
-    background-repeat:no-repeat; 
-    background-size: cover;
-}
 
 /* Quick nav shortcuts styling */
 .quick-nav ul {
@@ -251,7 +280,7 @@ h1 a:hover {
 
 /* Front page slideshow styling */
 .slide {
-    background-position: center;
+    background-position: center 20%;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -266,19 +295,20 @@ h1 a:hover {
 }
 #maps-floating-panel {
 	position: absolute;
-	bottom: 10px;
+	top: 10px;
 	left: 50%;
 	transform: translate(-50%);
 	z-index: 5;
 	padding: 5px;
 	text-align: center;
+	width: 80%;
 	font-family: 'Graphik Web','sans-serif';
 }
 
 #maps-floating-panel .row {
 	margin: 5px auto;
 	padding: 15px 5px;
-	background-color: white;
+	background-color: grey;
 	border:1px solid black;
 }
 
@@ -322,10 +352,11 @@ h1 a:hover {
     color: black;
     position:relative;
     border-bottom: 5px solid #C9243F;
-    transition: 1s ease;
+    transition: 0.5s ease;
 }
 .shortcut-link:hover {
     color: #C9243F;
+    background-color: #CCCCCC!important;
 }
 .shortcut-icon {
     position: absolute;

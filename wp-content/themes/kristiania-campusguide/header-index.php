@@ -14,10 +14,10 @@
     <body id="body-top" class="<?php echo implode(' ', get_body_class()); ?>">
         <header> 
             <!-- Logo branding and navigation section -->
-            <nav class="navbar navbar-light navbar-expand-md fixed-top" id="main-nav">
+            <nav class="navbar navbar-light navbar-expand-md" id="main-nav">
                 <div class="container">
                     <a class="navbar-brand" href="<?php echo esc_url( get_home_url() ); ?>">
-                        <img src="<?php echo get_template_directory_uri() . '/assets/hk_logo_black.svg' ?>" style="height:auto;" class="mr-3 ml-3 d-block"> Campusguide
+                        <img src="<?php echo get_template_directory_uri() . '/assets/hk_logo_black.svg' ?>" alt="Kristiania Campusguide" style="height:auto;" class="mr-3 ml-3 d-block"> Campusguide
                     </a>
                     <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1">
                         <span class="sr-only">Vis navigasjonsmeny</span>

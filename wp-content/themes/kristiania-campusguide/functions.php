@@ -4,7 +4,7 @@
 **** scripts and styles, sidebars, widget areas, customizer options etc.
 ***/
 ?>
- <?php
+<?php
 if ( ! function_exists( 'kristianiacampusguide_setup' ) ) :
 
 function kristianiacampusguide_setup() {
@@ -211,7 +211,8 @@ if ( ! function_exists( 'kristianiacampusguide_enqueue_scripts' ) ) :
     wp_deregister_style( 'jquery-ui' );
     wp_enqueue_style( 'jquiery-ui', 'https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css', false, null, 'all');
 
-
+    wp_deregister_style( 'fs-modal' );
+    wp_enqueue_style( 'fs-modal', get_template_directory_uri() . '/assets/js/bootstrap4-fs-modal-master/dist/css/bootstrap-fs-modal.min.css', false, null, 'all');
 
     }
     add_action( 'wp_enqueue_scripts', 'kristianiacampusguide_enqueue_scripts' );
