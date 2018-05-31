@@ -43,7 +43,7 @@ Inside one of the campus pages the user is presented with some general info abou
 - Post Types Order
 - SVG Support
 
-** PODS **
+###### PODS 
 We chose PODS to help facilitate templating and custom content types for the project.
 
 It allows for fast and easy setting up of content types. You can create a new type and give it custom fields and have someone start adding in content immediately.
